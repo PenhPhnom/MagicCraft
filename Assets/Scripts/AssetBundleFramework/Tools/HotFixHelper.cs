@@ -7,7 +7,7 @@
 *			 功能：
 *				提供热更新需要的公共通用方法
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *

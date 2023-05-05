@@ -1,13 +1,13 @@
 /***
 *
-*	Title:"AB¿ò¼Ü"ÏîÄ¿
-*           Â·¾¶¹¤¾ßÀà
+*	Title:"ABï¿½ï¿½ï¿½"ï¿½ï¿½Ä¿
+*           Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
 *	Description:
-*           ¹¦ÄÜ£º
-*               °üº¬ËùÓÐÂ·¾¶³£Á¿¡¢Â·¾¶·½·¨
+*           ï¿½ï¿½ï¿½Ü£ï¿½
+*               ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *
@@ -23,28 +23,28 @@ namespace AssetBundleFramework
 
     public class PathTool
     {
-        //Â·¾¶³£Á¿
-        //AB×ÊÔ´ÎÄ¼þ¼Ð
+        //Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //ABï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½
         public static string AB_RESOURCE = "AB_Resources";
 
-        //Ð£ÑéÎÄ¼þÃû³Æ
+        //Ð£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
         public static string VERIFY_FILE_PATH = "/VerifyFile.txt";
 
-        /*¶¨Òå¿½±´luaÎÄ¼þµÄÂ·¾¶³£Á¿*/
-        //¶¨Òå¿½±´luaÎÄ¼þµÄÔ´Ä¿Â¼£¨lua±à¼­Çø£©
+        /*ï¿½ï¿½ï¿½å¿½ï¿½ï¿½luaï¿½Ä¼ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
+        //ï¿½ï¿½ï¿½å¿½ï¿½ï¿½luaï¿½Ä¼ï¿½ï¿½ï¿½Ô´Ä¿Â¼ï¿½ï¿½luaï¿½à¼­ï¿½ï¿½ï¿½ï¿½
         public const string LUA_DIR_PATH = "LuaScripts/";
 
-        //¶¨ÒåÄ¿±êÄ¿Â¼£¨luaÎÄ¼þµÄ·¢²¼Çø£©
+        //ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ä¿Â¼ï¿½ï¿½luaï¿½Ä¼ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         public const string LUA_DEPLOY_PATH = "/Lua";
 
 
-        //¶¨ÒåHTTP·þÎñÆ÷Á¬½ÓµØÖ·
+        //ï¿½ï¿½ï¿½ï¿½HTTPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½Ö·
         public const string SERVER_URL = "http://127.0.0.1:8080/UpdateAssets";
 
 
-        //Â·¾¶·½·¨
+        //Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         /// <summary>
-        /// »ñÈ¡AB×ÊÔ´Â·¾¶
+        /// ï¿½ï¿½È¡ABï¿½ï¿½Ô´Â·ï¿½ï¿½
         /// </summary>
         /// <returns></returns>
         public static string GetABResourcePath()
@@ -53,10 +53,10 @@ namespace AssetBundleFramework
         }
 
         /// <summary>
-        /// »ñÈ¡´òAB°üÊä³öÂ·¾¶
-        /// Ëã·¨£º
-        ///     1£ºÆ½Ì¨(PC/ÒÆ¶¯¶Ë)Â·¾¶
-        ///     2£ºÆ½Ì¨Ãû³Æ
+        /// ï¿½ï¿½È¡ï¿½ï¿½ABï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
+        /// ï¿½ã·¨ï¿½ï¿½
+        ///     1ï¿½ï¿½Æ½Ì¨(PC/ï¿½Æ¶ï¿½ï¿½ï¿½)Â·ï¿½ï¿½
+        ///     2ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½ï¿½
         /// </summary>
         /// <returns></returns>
         public static string GetABOutPath()
@@ -65,7 +65,7 @@ namespace AssetBundleFramework
         }
 
         /// <summary>
-        /// »ñÈ¡Æ½Ì¨Â·¾¶
+        /// ï¿½ï¿½È¡Æ½Ì¨Â·ï¿½ï¿½
         /// </summary>
         /// <returns></returns>
         public static string GetPlatformPath()
@@ -89,7 +89,7 @@ namespace AssetBundleFramework
         }
 
         /// <summary>
-        /// »ñÈ¡Æ½Ì¨Ãû³Æ
+        /// ï¿½ï¿½È¡Æ½Ì¨ï¿½ï¿½ï¿½ï¿½
         /// </summary>
         /// <returns></returns>
         public static string GetPlatformName()
@@ -114,7 +114,7 @@ namespace AssetBundleFramework
         }
 
         /// <summary>
-        /// »ñÈ¡UnityWebRequestÏÂAB°üÏÂÔØÂ·¾¶
+        /// ï¿½ï¿½È¡UnityWebRequestï¿½ï¿½ABï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
         /// </summary>
         /// <returns></returns>
         public static string GetABDownLoadPath()
@@ -139,7 +139,7 @@ namespace AssetBundleFramework
         }
 
         /// <summary>
-        /// »ñÈ¡Ð£ÑéÎÄ¼þÂ·¾¶
+        /// ï¿½ï¿½È¡Ð£ï¿½ï¿½ï¿½Ä¼ï¿½Â·ï¿½ï¿½
         /// </summary>
         /// <returns></returns>
         public static string GetMD5VerifyFilePath()

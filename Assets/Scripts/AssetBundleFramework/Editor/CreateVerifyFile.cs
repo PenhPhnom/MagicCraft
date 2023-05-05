@@ -9,7 +9,7 @@
 *				1：针对生成的AB包，与各种资源文件（lua/Manifest/Json...），生成MD5校验文件
 *				2：本步骤需要在Unity的编辑器下运行，需要先提前生成AB包
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *

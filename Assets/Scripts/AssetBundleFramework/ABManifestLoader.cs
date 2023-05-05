@@ -6,7 +6,7 @@
 *	Description:
 *           功能：加载manifest文件
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *

@@ -5,7 +5,7 @@
     Description:
         所有类的基类
 
-    Author : Zhaiyurong
+    Author : PenhPhnom
 
     Date : 2022.2
 

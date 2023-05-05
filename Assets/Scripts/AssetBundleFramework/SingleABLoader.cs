@@ -6,7 +6,7 @@
 *	Description:
 *           功能：加载单个AB包
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *

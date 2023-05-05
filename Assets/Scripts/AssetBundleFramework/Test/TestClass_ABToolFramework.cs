@@ -6,7 +6,7 @@
 *	Description:
 *            功能：框架整体验证测试
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *

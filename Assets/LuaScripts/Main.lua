@@ -5,7 +5,7 @@
     Description:
         Lua程序入口
 
-    Author : Zhaiyurong
+    Author : PenhPhnom
 
     Date : 2022.2
 
@@ -20,6 +20,7 @@ UIManager = require 'UIManager'
 
 local function Main()
     print("Main Func Run")
+    local go = CS.UnityEngine.GameObject()
 end
 
 Main()

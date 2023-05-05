@@ -1,11 +1,11 @@
 /***
 *
-*	Title:"Lua¿ò¼Ü"ÏîÄ¿
-*			Æô¶¯Lua´úÂë
+*	Title:"Luaæ¡†æ¶"é¡¹ç›®
+*			å¯åŠ¨Luaä»£ç 
 *
 *	Description:
-*		¹¦ÄÜ£º
-*			Æô¶¯Lua
+*		åŠŸèƒ½ï¼š
+*			å¯åŠ¨Lua
 *
 *	Author: Zhaiyurong
 *
@@ -28,10 +28,10 @@ namespace LuaFramework
 {
     public class LuaFWClient : MonoBehaviour
     {
-        //Lua»·¾³
+        //Luaç¯å¢ƒ
         private LuaEnv luaenv;
 
-        //UpdateÊÂ¼ş
+        //Updateäº‹ä»¶
         private Action LuaUpdate;
         private Action LuaFixedUpdate;
         private Action LuaLateUpdate;
@@ -39,38 +39,39 @@ namespace LuaFramework
 
         void Start()
         {
-            //¶¨ÒåLua»·¾³
+            //å®šä¹‰Luaç¯å¢ƒ
             luaenv = new LuaEnv();
 
-            //Ìí¼Óloader
+            //æ·»åŠ loader
             luaenv.AddLoader(LuaLoader);
 
-            //¿ªÊ¼Ö´ĞĞLua´úÂë
+            //å¼€å§‹æ‰§è¡ŒLuaä»£ç 
             luaenv.DoString(LuaFWDefine.LUA_START);
 
             
-            //¶¨ÒåUpdate
+            //å®šä¹‰Update
             LuaUpdate = luaenv.Global.Get<Action>("Update");
             LuaFixedUpdate = luaenv.Global.Get<Action>("FixedUpdate");
             LuaLateUpdate = luaenv.Global.Get<Action>("LateUpdate");
         }
 
         /// <summary>
-        /// ×Ô¶¨ÒåLoader
+        /// è‡ªå®šä¹‰Loader
         /// </summary>
-        /// <param name="filepath">requireÓï¾äÖĞÌîµÄluaÎÄ¼şÂ·¾¶</param>
+        /// <param name="filepath">requireè¯­å¥ä¸­å¡«çš„luaæ–‡ä»¶è·¯å¾„</param>
         /// <returns></returns>
         public byte[] LuaLoader(ref string filepath)
         {
-            //Æ´½ÓLuaÎÄ¼şÏÂÔØÂ·¾¶
+            Debug.Log("LuaLoader");
+            //æ‹¼æ¥Luaæ–‡ä»¶ä¸‹è½½è·¯å¾„
             string loadPath = LuaFWPathTool.GetLuaScriptPath() + "/" + filepath + ".lua";
             //Debug.Log("lua filepath = " + loadPath);
 
-            //¶ÁÈ¡LuaÎÄ¼şÄÚÈİ
+            //è¯»å–Luaæ–‡ä»¶å†…å®¹
             string content = File.ReadAllText(loadPath);
             //Debug.Log("lua text = "+ content);
 
-            return System.Text.Encoding.UTF8.GetBytes(content);
+            return Encoding.UTF8.GetBytes(content);
         }
 
         
@@ -95,12 +96,12 @@ namespace LuaFramework
         {
             Debug.Log("GameManager Destroyed");
 
-            //ÇåÀíÒıÓÃÊı¾İ
+            //æ¸…ç†å¼•ç”¨æ•°æ®
             LuaUpdate = null;
             LuaLateUpdate = null;
             LuaFixedUpdate = null;
 
-            //ÊÍ·Å×ÊÔ´
+            //é‡Šæ”¾èµ„æº
             luaenv.Dispose();
         }
     }

@@ -8,7 +8,7 @@
 *               1：获取AB包之间的依赖和引用关系
 *               2：管理AssetBundle包之间的自动连锁（递归）加载机制
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *

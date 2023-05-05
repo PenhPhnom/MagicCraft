@@ -1,15 +1,15 @@
 /***
 *
-*	Title:"AB¿ò¼Ü"ÏîÄ¿
-*           ´ò°ü×ÊÔ´´°¿Ú
+*	Title:"ABï¿½ï¿½ï¿½"ï¿½ï¿½Ä¿
+*           ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½
 *
 *	Description:
-*           ¿ª·¢Ë¼Â·£º
-*               1£º±ê¼ÇAB×ÊÔ´
-*               2£º¶Ô±ê¼ÇµÄ×ÊÔ´½øÐÐ´ò°ü
+*           ï¿½ï¿½ï¿½ï¿½Ë¼Â·ï¿½ï¿½
+*               1ï¿½ï¿½ï¿½ï¿½ï¿½ABï¿½ï¿½Ô´
+*               2ï¿½ï¿½ï¿½Ô±ï¿½Çµï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½Ð´ï¿½ï¿½
 *               
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *
@@ -25,7 +25,7 @@ namespace AssetBundleFramework
     using System.IO;
 
 
-    //´òAB°ü´°¿Ú
+    //ï¿½ï¿½ABï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public class BuildABWindow : EditorWindow
     {
         private static string abRootPath = "AssetBundles";
@@ -33,16 +33,16 @@ namespace AssetBundleFramework
         BuildTarget buildTarget = BuildTarget.StandaloneWindows64;
 
         /// <summary>
-        /// ´ò¿ª´ò°ü´°¿Ú 
+        /// ï¿½ò¿ª´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
         /// </summary>
         [MenuItem("Tools/PackToolsWindow")]
         public static void OpenPackToolWindow()
         {
-            BuildABWindow window = GetWindow<BuildABWindow>(false, "´ò°ü´°¿Ú");
+            BuildABWindow window = GetWindow<BuildABWindow>(false, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         }
 
         /// <summary>
-        /// »æÖÆ´°¿ÚUI
+        /// ï¿½ï¿½ï¿½Æ´ï¿½ï¿½ï¿½UI
         /// </summary>
         void OnGUI()
         {
@@ -62,12 +62,12 @@ namespace AssetBundleFramework
                     break;
             }
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button("×Ô¶¯±ê¼ÇAB°üÃû"))
+            if (GUILayout.Button("ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ABï¿½ï¿½ï¿½ï¿½"))
             {
                 AutoSetAssetBundleLabel();
             }
 
-            if (GUILayout.Button("´ò°üAssetBundles"))
+            if (GUILayout.Button("ï¿½ï¿½ï¿½AssetBundles"))
             {
                 BuildABResources(buildTarget);
             }
@@ -78,7 +78,7 @@ namespace AssetBundleFramework
 
 
         /// <summary>
-        /// ×Ô¶¯¸ø×ÊÔ´ÎÄ¼þÌí¼Ó±ê¼Ç
+        /// ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½
         /// </summary>
         private void AutoSetAssetBundleLabel()
         {
@@ -86,10 +86,10 @@ namespace AssetBundleFramework
         }
 
         /// <summary>
-        /// ´ò°üÉú³ÉËùÓÐµÄAB°ü
+        /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ABï¿½ï¿½
         /// </summary>
-        /// <param name="abOutPathDir">´òAB°üÊä³öÂ·¾¶</param>
-        /// <param name="target">´òAB°üÄ¿±êÆ½Ì¨</param>
+        /// <param name="abOutPathDir">ï¿½ï¿½ABï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½</param>
+        /// <param name="target">ï¿½ï¿½ABï¿½ï¿½Ä¿ï¿½ï¿½Æ½Ì¨</param>
         private void BuildABResources(BuildTarget target)
         {
             string abOutPathDir = PathTool.GetABOutPath();
@@ -99,20 +99,20 @@ namespace AssetBundleFramework
             }
             else
             {
-                //É¾³ýËùÓÐµÄAB°üÎÄ¼þ
+                //É¾ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ABï¿½ï¿½ï¿½Ä¼ï¿½
                 Directory.Delete(abOutPathDir, true);
-                //È¥³ýÉ¾³ý¾¯¸æ£¬É¾³ý*.metaÎÄ¼þ
+                //È¥ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½æ£¬É¾ï¿½ï¿½*.metaï¿½Ä¼ï¿½
                 File.Delete(abOutPathDir + ".meta");
-                //Ë¢ÐÂ
+                //Ë¢ï¿½ï¿½
                 AssetDatabase.Refresh();
             }
 
             BuildPipeline.BuildAssetBundles(abOutPathDir, BuildAssetBundleOptions.None, target);
-            Debug.Log("AssetBundle ±¾´Î´ò°üÍê³É£¡");
+            Debug.Log("AssetBundle ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½É£ï¿½");
         }
 
 
-        //Ð´Èë°æ±¾ºÅ
+        //Ð´ï¿½ï¿½æ±¾ï¿½ï¿½
         public static void SaveVersion(string version, string package)
         {
 

@@ -11,7 +11,7 @@
 *                       如果是目录，则需要递归访问里面的文件，直到定位到文件
 *                    2.2: 如果找到文件，则使用AssetImporter类，标记包名和后缀名
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *

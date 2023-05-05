@@ -9,7 +9,7 @@
 *               2：以场景为单位管理整个项目中所有的AssetBundle包
 *
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *

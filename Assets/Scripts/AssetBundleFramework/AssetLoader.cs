@@ -11,7 +11,7 @@
 *               3：卸载、释放AB资源
 *               4：查看当前AB包资源
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *

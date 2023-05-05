@@ -7,7 +7,7 @@
 *		功能：
 *			定义、管理Lua文件路径
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *

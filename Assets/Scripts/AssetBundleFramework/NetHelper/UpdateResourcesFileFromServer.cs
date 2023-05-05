@@ -13,7 +13,7 @@
 *					c：客户端存在服务器上没有的资源文件，说明服务器端最新资源删除了部分资源，则客户度删除该资源
 *				
 *
-*	Author: Zhaiyurong
+*	Author : PenhPhnom
 *
 *	Date: 2022.2
 *
