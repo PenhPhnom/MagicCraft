@@ -7,25 +7,37 @@
 
     Author : PenhPhnom
 
-    Date : 2022.2
+    Date:2023.5
 
     Modify:
 
 ]]
 
-require 'Update'
 
+GameObject = CS.UnityEngine.GameObject
+Input = CS.UnityEngine.Input
+Transform = CS.UnityEngine.Transform
 
 UIManager = require 'UIManager'
-
+local speed = 1000
+local r = CS.UnityEngine.Vector3.up * CS.UnityEngine.Time.deltaTime * speed
+local c = GameObject.Find("Cube")
 local function Main()
     print("Main Func Run")
-    local go = CS.UnityEngine.GameObject()
 end
 
 Main()
+function Update()
+    c.transform:Rotate(r)
+end
 
+function LateUpdate()
+    --print("lua LateUpdate Run")
+end
 
+function FixedUpdate()
+    --print("lua FixedUpdate Run")
+end
 --监控_G
 local mt = {}
 

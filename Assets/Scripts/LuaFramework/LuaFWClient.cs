@@ -9,7 +9,7 @@
 *
 *	Author: Zhaiyurong
 *
-*	Date: 2022.2
+*	Date: 2023.5
 *
 *	Modify:
 *
@@ -28,9 +28,6 @@ namespace LuaFramework
 {
     public class LuaFWClient : MonoBehaviour
     {
-        //Lua环境
-        private LuaEnv luaenv;
-
         //Update事件
         private Action LuaUpdate;
         private Action LuaFixedUpdate;
@@ -39,20 +36,19 @@ namespace LuaFramework
 
         void Start()
         {
-            //定义Lua环境
-            luaenv = new LuaEnv();
-
-            //添加loader
-            luaenv.AddLoader(LuaLoader);
-
-            //开始执行Lua代码
-            luaenv.DoString(LuaFWDefine.LUA_START);
-
-            
+            //解释一遍lua脚本
+            InitLuaScripts();
             //定义Update
-            LuaUpdate = luaenv.Global.Get<Action>("Update");
-            LuaFixedUpdate = luaenv.Global.Get<Action>("FixedUpdate");
-            LuaLateUpdate = luaenv.Global.Get<Action>("LateUpdate");
+            LuaUpdate = LuaClientMgr.Instance.GetXLuaEnv().Global.Get<Action>("Update");
+            LuaFixedUpdate = LuaClientMgr.Instance.GetXLuaEnv().Global.Get<Action>("FixedUpdate");
+            LuaLateUpdate = LuaClientMgr.Instance.GetXLuaEnv().Global.Get<Action>("LateUpdate");
+        }
+        public void InitLuaScripts()
+        {
+            //添加loader
+            LuaClientMgr.Instance.GetXLuaEnv().AddLoader(LuaLoader);
+            //开始执行Lua代码
+            LuaClientMgr.Instance.GetXLuaEnv().DoString(LuaFWDefine.LUA_START);
         }
 
         /// <summary>
@@ -62,10 +58,9 @@ namespace LuaFramework
         /// <returns></returns>
         public byte[] LuaLoader(ref string filepath)
         {
-            Debug.Log("LuaLoader");
             //拼接Lua文件下载路径
             string loadPath = LuaFWPathTool.GetLuaScriptPath() + "/" + filepath + ".lua";
-            //Debug.Log("lua filepath = " + loadPath);
+            Debug.Log("lua filepath = " + loadPath);
 
             //读取Lua文件内容
             string content = File.ReadAllText(loadPath);
@@ -74,7 +69,7 @@ namespace LuaFramework
             return Encoding.UTF8.GetBytes(content);
         }
 
-        
+
         // Update is called once per frame
         void Update()
         {
@@ -90,7 +85,7 @@ namespace LuaFramework
         {
             LuaFixedUpdate();
         }
-        
+
 
         void OnDestroy()
         {
@@ -102,7 +97,7 @@ namespace LuaFramework
             LuaFixedUpdate = null;
 
             //释放资源
-            luaenv.Dispose();
+            LuaClientMgr.Instance.GetXLuaEnv().Dispose();
         }
     }
 
